@@ -1,291 +1,301 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Code, Palette, Rocket, Mail, Phone, MapPin, Star, ArrowRight, Zap } from "lucide-react";
+import { ArrowRight, Code, Palette, Rocket, Mail, Phone, MapPin, Zap, BadgeDollarSign, Headphones } from "lucide-react"
+import Image from "next/image"
+import Navbar from "@/components/Navbar"
+import Blob from "@/components/Blob"
+import { Button } from "@/components/ui/button"
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
+
+const WA = "https://wa.me/62895326880773?text=Halo%20saya%20tertarik%20menggunakan%20jasa%20pembuatan%20website%20Tara%20Tech"
+
+// Palette
+// #181A2F — bg utama (navy hitam)
+// #242E49 — muted / card bg
+// #37415C — accent / border
+// #FDA481 — peach (teks, highlight)
+// #B4182D — merah (primary / CTA)
+// #54162B — burgundy (footer / dark section)
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-neo-bg">
-      {/* Navbar */}
-      <nav className="border-b-4 border-black bg-white sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center max-w-7xl">
-          <div className="border-4 border-black bg-neo-accent px-4 py-2 shadow-neo-sm rotate-1">
-            <h1 className="text-2xl font-black uppercase">TARA TECH</h1>
-          </div>
-          <div className="hidden md:flex gap-6 items-center">
-            <a href="#layanan" className="font-bold uppercase text-sm hover:bg-neo-secondary hover:px-3 hover:py-2 hover:border-4 hover:border-black hover:shadow-neo-sm transition-all duration-100">Layanan</a>
-            <a href="#keunggulan" className="font-bold uppercase text-sm hover:bg-neo-secondary hover:px-3 hover:py-2 hover:border-4 hover:border-black hover:shadow-neo-sm transition-all duration-100">Keunggulan</a>
-            <a href="#kontak" className="font-bold uppercase text-sm hover:bg-neo-secondary hover:px-3 hover:py-2 hover:border-4 hover:border-black hover:shadow-neo-sm transition-all duration-100">Kontak</a>
-          </div>
-        </div>
-      </nav>
+    <main style={{ background: "#181A2F" }}>
+      <Navbar />
 
-      {/* Hero Section */}
-      <section className="container mx-auto px-4 py-20 md:py-32 max-w-7xl relative overflow-hidden">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
-            <div className="inline-block border-4 border-black bg-neo-secondary px-4 py-2 shadow-neo-sm -rotate-2">
-              <span className="font-black text-sm uppercase tracking-widest">🚀 Web Development</span>
-            </div>
-            
-            <h2 className="text-6xl md:text-8xl font-black leading-none">
-              <span className="block">WUJUDKAN</span>
-              <span className="block text-stroke mt-2">WEBSITE</span>
-              <span className="block -rotate-1 inline-block bg-neo-accent border-4 border-black px-4 shadow-neo mt-4">IMPIAN</span>
-            </h2>
-            
-            <p className="text-xl md:text-2xl font-bold leading-relaxed">
-              Partner terpercaya untuk pembuatan website profesional yang modern, responsif, dan sesuai kebutuhan bisnis Anda
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="https://wa.me/6289532688077?text=Halo%20saya%20tertarik%20menggunakan%20jasa%20pembuatan%20website%20Tara%20Tech" target="_blank" rel="noopener noreferrer">
-                <Button variant="primary" className="group w-full sm:w-auto">
-                  Konsultasi Gratis
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </a>
-              <Button variant="secondary">
-                Lihat Portofolio
-              </Button>
-            </div>
+      {/* HERO */}
+      <section
+        className="relative overflow-hidden flex items-center justify-center px-4 sm:px-6 lg:px-8"
+        style={{ minHeight: "calc(100vh - 72px)" }}
+      >
+        <Blob shape={0} color="bg-primary/20"   className="w-[500px] h-[500px] -top-20 -left-32" />
+        <Blob shape={1} color="bg-[#FDA481]/10" className="w-[400px] h-[400px] bottom-0 -right-20" />
+
+        <div className="max-w-4xl w-full mx-auto text-center relative z-10 py-16">
+          <div className="inline-flex items-center gap-2 rounded-full px-5 py-2 mb-8 border" style={{ background: '#242E49', borderColor: '#37415C' }}>
+            <span className="text-sm font-semibold" style={{ color: '#FDA481' }}>Web Development Studio · Bogor</span>
           </div>
 
-          {/* Decorative Elements */}
-          <div className="relative hidden lg:block h-[500px]">
-            <div className="absolute top-0 right-0 w-64 h-64 border-4 border-black bg-neo-muted shadow-neo-lg rotate-6"></div>
-            <div className="absolute top-20 right-32 w-48 h-48 border-4 border-black bg-neo-secondary shadow-neo -rotate-12"></div>
-            <div className="absolute bottom-20 right-20 w-56 h-56 border-4 border-black bg-neo-accent shadow-neo-xl rotate-3"></div>
-            
-            <div className="absolute top-10 left-10 border-4 border-black bg-white px-6 py-3 shadow-neo rotate-12">
-              <Star className="h-12 w-12 fill-neo-secondary stroke-black stroke-[3px]" />
-            </div>
-            
-            <div className="absolute bottom-10 left-0 border-4 border-black bg-neo-secondary px-4 py-2 shadow-neo -rotate-6">
-              <span className="font-black text-4xl">100+</span>
-              <span className="block font-bold text-sm uppercase">Projects</span>
-            </div>
-          </div>
-        </div>
-      </section>
+          <h1 className="font-heading font-extrabold text-5xl md:text-7xl leading-tight mb-6" style={{ color: '#FDA481' }}>
+            Wujudkan Website{" "}
+            <em className="not-italic" style={{ color: '#B4182D' }}>Impian</em>{" "}
+            Anda
+          </h1>
 
-      {/* Services Section */}
-      <section id="layanan" className="bg-neo-secondary border-y-8 border-black py-20 md:py-32 relative">
-        <div className="absolute inset-0 opacity-10" style={{
-          backgroundImage: 'radial-gradient(#000 1.5px, transparent 1.5px)',
-          backgroundSize: '20px 20px'
-        }}></div>
-        
-        <div className="container mx-auto px-4 max-w-7xl relative">
-          <div className="text-center mb-16">
-            <h3 className="text-5xl md:text-7xl font-black uppercase mb-4">
-              LAYANAN KAMI
-            </h3>
-            <div className="w-32 h-2 bg-black mx-auto"></div>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-white border-4 border-black shadow-neo-lg hover:-translate-y-2 hover:shadow-neo-xl transition-all duration-200 rotate-1">
-              <CardHeader>
-                <div className="w-16 h-16 border-4 border-black bg-neo-accent flex items-center justify-center mb-4 shadow-neo-sm">
-                  <Code className="h-8 w-8 stroke-[3px]" />
-                </div>
-                <CardTitle className="text-2xl font-black uppercase">Company Profile</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="font-bold text-lg">Website profesional untuk memperkenalkan perusahaan dan layanan Anda kepada dunia</p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white border-4 border-black shadow-neo-lg hover:-translate-y-2 hover:shadow-neo-xl transition-all duration-200 -rotate-1">
-              <CardHeader>
-                <div className="w-16 h-16 border-4 border-black bg-neo-muted flex items-center justify-center mb-4 shadow-neo-sm">
-                  <Rocket className="h-8 w-8 stroke-[3px]" />
-                </div>
-                <CardTitle className="text-2xl font-black uppercase">E-Commerce</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="font-bold text-lg">Toko online lengkap dengan sistem pembayaran dan manajemen produk yang mudah</p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white border-4 border-black shadow-neo-lg hover:-translate-y-2 hover:shadow-neo-xl transition-all duration-200 rotate-2">
-              <CardHeader>
-                <div className="w-16 h-16 border-4 border-black bg-neo-secondary flex items-center justify-center mb-4 shadow-neo-sm">
-                  <Palette className="h-8 w-8 stroke-[3px]" />
-                </div>
-                <CardTitle className="text-2xl font-black uppercase">Landing Page</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="font-bold text-lg">Halaman promosi yang menarik dan efektif untuk meningkatkan konversi bisnis Anda</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section id="keunggulan" className="py-20 md:py-32 bg-neo-bg">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-16">
-            <h3 className="text-5xl md:text-7xl font-black uppercase mb-4">
-              <span className="inline-block -rotate-2">MENGAPA</span>{" "}
-              <span className="inline-block bg-neo-accent border-4 border-black px-6 shadow-neo rotate-2">PILIH</span>{" "}
-              <span className="inline-block">KAMI?</span>
-            </h3>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="border-4 border-black bg-white p-8 shadow-neo hover:-translate-y-1 hover:shadow-neo-lg transition-all duration-200">
-              <div className="w-20 h-20 border-4 border-black bg-neo-accent rounded-full flex items-center justify-center mx-auto mb-6 shadow-neo-sm">
-                <Zap className="h-10 w-10 stroke-[3px]" />
-              </div>
-              <h4 className="text-xl font-black uppercase mb-3 text-center">Cepat & Responsif</h4>
-              <p className="font-bold text-center">Website yang cepat dan optimal di semua perangkat</p>
-            </div>
-
-            <div className="border-4 border-black bg-white p-8 shadow-neo hover:-translate-y-1 hover:shadow-neo-lg transition-all duration-200 rotate-1">
-              <div className="w-20 h-20 border-4 border-black bg-neo-muted rounded-full flex items-center justify-center mx-auto mb-6 shadow-neo-sm">
-                <span className="text-4xl">🎨</span>
-              </div>
-              <h4 className="text-xl font-black uppercase mb-3 text-center">Design Modern</h4>
-              <p className="font-bold text-center">Tampilan menarik dengan UI/UX terkini</p>
-            </div>
-
-            <div className="border-4 border-black bg-white p-8 shadow-neo hover:-translate-y-1 hover:shadow-neo-lg transition-all duration-200 -rotate-1">
-              <div className="w-20 h-20 border-4 border-black bg-neo-secondary rounded-full flex items-center justify-center mx-auto mb-6 shadow-neo-sm">
-                <span className="text-4xl">💰</span>
-              </div>
-              <h4 className="text-xl font-black uppercase mb-3 text-center">Harga Terjangkau</h4>
-              <p className="font-bold text-center">Paket harga yang sesuai dengan budget Anda</p>
-            </div>
-
-            <div className="border-4 border-black bg-white p-8 shadow-neo hover:-translate-y-1 hover:shadow-neo-lg transition-all duration-200 rotate-2">
-              <div className="w-20 h-20 border-4 border-black bg-neo-accent rounded-full flex items-center justify-center mx-auto mb-6 shadow-neo-sm">
-                <span className="text-4xl">🛠️</span>
-              </div>
-              <h4 className="text-xl font-black uppercase mb-3 text-center">Support 24/7</h4>
-              <p className="font-bold text-center">Tim support siap membantu kapan saja</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="bg-black border-y-8 border-black py-20 md:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5" style={{
-          backgroundSize: '40px 40px',
-          backgroundImage: 'linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px)'
-        }}></div>
-        
-        <div className="container mx-auto px-4 max-w-4xl text-center relative">
-          <h3 className="text-5xl md:text-7xl font-black uppercase text-white mb-8 leading-tight">
-            SIAP MEMULAI PROYEK ANDA?
-          </h3>
-          <p className="text-xl md:text-2xl font-bold text-white mb-12">
-            Hubungi kami sekarang untuk konsultasi gratis dan wujudkan website impian Anda!
+          <p className="text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto" style={{ color: '#FDA48199' }}>
+            Tara Tech adalah partner terpercaya untuk pembuatan website profesional yang modern, responsif, dan sesuai kebutuhan bisnis Anda.
           </p>
-          <a href="https://wa.me/6289532688077?text=Halo%20saya%20tertarik%20menggunakan%20jasa%20pembuatan%20website%20Tara%20Tech" target="_blank" rel="noopener noreferrer">
-            <Button variant="secondary" className="text-lg h-16 px-12">
-              MULAI SEKARANG
-              <ArrowRight className="ml-2 h-6 w-6" />
-            </Button>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href={WA} target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="w-full sm:w-auto">
+                Konsultasi Gratis <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </a>
+            <a href="#layanan">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto">
+                Lihat Layanan
+              </Button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section id="layanan" className="py-32 px-4 sm:px-6 lg:px-8" style={{ background: '#242E49' }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="font-semibold text-sm uppercase tracking-widest mb-3" style={{ color: '#B4182D' }}>Apa yang kami tawarkan</p>
+            <h2 className="font-heading font-bold text-4xl md:text-5xl" style={{ color: '#FDA481' }}>Layanan Kami</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { Icon: Code,    title: "Website Company Profile", desc: "Website profesional untuk memperkenalkan perusahaan dan layanan Anda kepada dunia dengan tampilan yang elegan.", v: 0 },
+              { Icon: Rocket,  title: "E-Commerce",              desc: "Toko online lengkap dengan sistem pembayaran, manajemen produk, dan pengalaman belanja yang menyenangkan.", v: 1 },
+              { Icon: Palette, title: "Landing Page",            desc: "Halaman promosi yang menarik dan efektif untuk meningkatkan konversi dan penjualan bisnis Anda.", v: 2 },
+            ].map(({ Icon, title, desc, v }) => (
+              <Card key={title} variant={v as 0|1|2}>
+                <CardHeader>
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4" style={{ background: '#B4182D22' }}>
+                    <Icon className="h-7 w-7" style={{ color: '#B4182D' }} />
+                  </div>
+                  <CardTitle style={{ color: '#FDA481' }}>{title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="leading-relaxed" style={{ color: '#FDA48199' }}>{desc}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PERKS */}
+      <section id="keunggulan" className="py-32 px-4 sm:px-6 lg:px-8" style={{ background: '#181A2F' }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="font-semibold text-sm uppercase tracking-widest mb-3" style={{ color: '#B4182D' }}>Keunggulan kami</p>
+            <h2 className="font-heading font-bold text-4xl md:text-5xl" style={{ color: '#FDA481' }}>Mengapa Pilih Tara Tech?</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {([
+              { Icon: Zap,             title: "Cepat & Responsif", desc: "Website yang cepat dan optimal di semua perangkat." },
+              { Icon: Palette,         title: "Design Modern",      desc: "Tampilan menarik dengan UI/UX terkini yang memukau." },
+              { Icon: BadgeDollarSign, title: "Harga Terjangkau",   desc: "Paket harga yang transparan dan sesuai budget Anda." },
+              { Icon: Headphones,      title: "Support 24/7",       desc: "Tim support siap membantu kapan saja." },
+            ] as const).map(({ Icon, title, desc }) => (
+              <div key={title} className="rounded-3xl p-8 hover:-translate-y-1 transition-all duration-300 text-center border" style={{ background: '#242E49', borderColor: '#37415C' }}>
+                <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-5" style={{ background: '#B4182D22' }}>
+                  <Icon className="h-7 w-7" style={{ color: '#B4182D' }} />
+                </div>
+                <h4 className="font-heading font-bold text-lg mb-2" style={{ color: '#FDA481' }}>{title}</h4>
+                <p className="text-sm leading-relaxed" style={{ color: '#FDA48199' }}>{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="relative overflow-hidden py-32 px-4 sm:px-6 lg:px-8" style={{ background: '#B4182D' }}>
+        <Blob shape={2} color="bg-[#54162B]/40" className="w-[500px] h-[500px] -top-20 -right-20" />
+        <div className="max-w-3xl mx-auto text-center relative z-10">
+          <h2 className="font-heading font-extrabold text-4xl md:text-6xl leading-tight mb-6" style={{ color: '#FDA481' }}>
+            Siap Memulai Proyek Anda?
+          </h2>
+          <p className="text-lg md:text-xl mb-10 leading-relaxed" style={{ color: '#FDA48199' }}>
+            Hubungi kami sekarang untuk konsultasi gratis dan wujudkan website impian Anda bersama Tara Tech.
+          </p>
+          <a href={WA} target="_blank" rel="noopener noreferrer">
+            <button
+              className="inline-flex items-center justify-center h-14 px-12 rounded-full font-bold text-base hover:scale-105 active:scale-95 transition-all duration-300"
+              style={{ background: '#FDA481', color: '#54162B' }}
+            >
+              Mulai Sekarang <ArrowRight className="ml-2 h-5 w-5" />
+            </button>
           </a>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="kontak" className="py-20 md:py-32 bg-neo-muted">
-        <div className="container mx-auto px-4 max-w-7xl">
+      {/* PRICING */}
+      <section id="pricing" className="py-32 px-4 sm:px-6 lg:px-8" style={{ background: '#181A2F' }}>
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h3 className="text-5xl md:text-7xl font-black uppercase">
-              HUBUNGI KAMI
-            </h3>
+            <p className="font-semibold text-sm uppercase tracking-widest mb-3" style={{ color: '#B4182D' }}>Investasi terbaik</p>
+            <h2 className="font-heading font-bold text-4xl md:text-5xl mb-4" style={{ color: '#FDA481' }}>Paket Harga</h2>
+            <p className="text-lg max-w-xl mx-auto" style={{ color: '#FDA48199' }}>Pilih paket yang sesuai dengan kebutuhan bisnis Anda</p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            {/* Contact Info */}
-            <div className="space-y-6">
-              <div className="border-4 border-black bg-white p-6 shadow-neo hover:-translate-y-1 hover:shadow-neo-lg transition-all duration-200">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 border-4 border-black bg-neo-accent flex items-center justify-center flex-shrink-0">
-                    <Mail className="h-6 w-6 stroke-[3px]" />
-                  </div>
-                  <div>
-                    <h4 className="font-black text-xl uppercase mb-2">Email</h4>
-                    <p className="font-bold text-lg">info@taratech.web.id</p>
-                  </div>
-                </div>
-              </div>
+          <div className="grid md:grid-cols-3 gap-8 items-start">
 
-              <div className="border-4 border-black bg-white p-6 shadow-neo hover:-translate-y-1 hover:shadow-neo-lg transition-all duration-200 rotate-1">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 border-4 border-black bg-neo-secondary flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-6 w-6 stroke-[3px]" />
-                  </div>
-                  <div>
-                    <h4 className="font-black text-xl uppercase mb-2">Telepon</h4>
-                    <p className="font-bold text-lg">+62 895-3268-80773</p>
-                  </div>
-                </div>
+            {/* STARTER */}
+            <div className="rounded-3xl p-8 border transition-all duration-300 hover:-translate-y-1" style={{ background: '#242E49', borderColor: '#37415C' }}>
+              <p className="font-semibold text-sm uppercase tracking-widest mb-4" style={{ color: '#FDA48199' }}>Starter</p>
+              <div className="flex items-end gap-1 mb-2">
+                <span className="font-heading font-extrabold text-5xl" style={{ color: '#FDA481' }}>500K</span>
+                <span className="text-lg mb-2" style={{ color: '#FDA48199' }}>/proyek</span>
               </div>
-
-              <div className="border-4 border-black bg-white p-6 shadow-neo hover:-translate-y-1 hover:shadow-neo-lg transition-all duration-200 -rotate-1">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 border-4 border-black bg-neo-muted flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-6 w-6 stroke-[3px]" />
-                  </div>
-                  <div>
-                    <h4 className="font-black text-xl uppercase mb-2">Alamat</h4>
-                    <p className="font-bold text-lg">Bogor, Indonesia</p>
-                  </div>
-                </div>
-              </div>
+              <p className="text-sm mb-8" style={{ color: '#FDA48199' }}>Cocok untuk UMKM & personal branding</p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  "Landing Page 1 halaman",
+                  "Desain responsif mobile",
+                  "Domain .my.id 1 tahun",
+                  "Hosting 1 tahun",
+                  "Revisi 2x",
+                  "Selesai 5 hari kerja",
+                ].map(f => (
+                  <li key={f} className="flex items-center gap-3 text-sm" style={{ color: '#FDA481' }}>
+                    <span className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold" style={{ background: '#B4182D22', color: '#B4182D' }}>✓</span>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <a href="https://wa.me/62895326880773?text=Halo%20saya%20tertarik%20dengan%20Paket%20Starter%20(500K)%20untuk%20pembuatan%20website%20Tara%20Tech" target="_blank" rel="noopener noreferrer">
+                <button className="w-full h-12 rounded-full font-bold text-sm border-2 transition-all duration-300 hover:scale-105 active:scale-95" style={{ borderColor: '#FDA481', color: '#FDA481' }}>
+                  Pilih Paket
+                </button>
+              </a>
             </div>
 
-            {/* Contact Form */}
-            <div className="border-4 border-black bg-white p-8 shadow-neo-lg">
-              <form className="space-y-6">
-                <div>
-                  <input
-                    type="text"
-                    placeholder="NAMA ANDA"
-                    className="w-full h-14 px-4 font-bold text-lg border-4 border-black focus:bg-neo-secondary focus:shadow-neo-sm focus:outline-none transition-all duration-100 placeholder:text-black/40 placeholder:font-bold"
-                  />
+            {/* PROFESSIONAL — highlighted */}
+            <div className="rounded-3xl p-8 border transition-all duration-300 hover:-translate-y-2 relative" style={{ background: '#B4182D', borderColor: '#B4182D' }}>
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest" style={{ background: '#FDA481', color: '#54162B' }}>
+                Paling Populer
+              </div>
+              <p className="font-semibold text-sm uppercase tracking-widest mb-4" style={{ color: '#FDA48199' }}>Professional</p>
+              <div className="flex items-end gap-1 mb-2">
+                <span className="font-heading font-extrabold text-5xl" style={{ color: '#FDA481' }}>1,5JT</span>
+                <span className="text-lg mb-2" style={{ color: '#FDA48199' }}>/proyek</span>
+              </div>
+              <p className="text-sm mb-8" style={{ color: '#FDA48199' }}>Ideal untuk bisnis yang ingin tampil profesional</p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  "Website multi halaman (5 hal.)",
+                  "Desain custom UI/UX",
+                  "Domain .com 1 tahun",
+                  "Hosting premium 1 tahun",
+                  "Formulir kontak & WhatsApp",
+                  "Revisi 5x",
+                  "Selesai 7 hari kerja",
+                ].map(f => (
+                  <li key={f} className="flex items-center gap-3 text-sm" style={{ color: '#FDA481' }}>
+                    <span className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold" style={{ background: '#FDA48133', color: '#FDA481' }}>✓</span>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <a href="https://wa.me/62895326880773?text=Halo%20saya%20tertarik%20dengan%20Paket%20Professional%20(1%2C5JT)%20untuk%20pembuatan%20website%20Tara%20Tech" target="_blank" rel="noopener noreferrer">
+                <button className="w-full h-12 rounded-full font-bold text-sm transition-all duration-300 hover:scale-105 active:scale-95" style={{ background: '#FDA481', color: '#54162B' }}>
+                  Pilih Paket
+                </button>
+              </a>
+            </div>
+
+            {/* ENTERPRISE */}
+            <div className="rounded-3xl p-8 border transition-all duration-300 hover:-translate-y-1" style={{ background: '#242E49', borderColor: '#37415C' }}>
+              <p className="font-semibold text-sm uppercase tracking-widest mb-4" style={{ color: '#FDA48199' }}>Enterprise</p>
+              <div className="flex items-end gap-1 mb-2">
+                <span className="font-heading font-extrabold text-5xl" style={{ color: '#FDA481' }}>Custom</span>
+              </div>
+              <p className="text-sm mb-8" style={{ color: '#FDA48199' }}>Untuk kebutuhan bisnis skala besar & e-commerce</p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  "E-Commerce / sistem custom",
+                  "Desain premium UI/UX",
+                  "Domain & hosting premium",
+                  "Integrasi payment gateway",
+                  // "Dashboard admin",
+                  // "SEO lanjutan",
+                  "Revisi unlimited",
+                  "Support 3 bulan",
+                ].map(f => (
+                  <li key={f} className="flex items-center gap-3 text-sm" style={{ color: '#FDA481' }}>
+                    <span className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold" style={{ background: '#B4182D22', color: '#B4182D' }}>✓</span>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <a href="https://wa.me/62895326880773?text=Halo%20saya%20tertarik%20dengan%20Paket%20Enterprise%20(Custom)%20untuk%20pembuatan%20website%20Tara%20Tech" target="_blank" rel="noopener noreferrer">
+                <button className="w-full h-12 rounded-full font-bold text-sm border-2 transition-all duration-300 hover:scale-105 active:scale-95" style={{ borderColor: '#FDA481', color: '#FDA481' }}>
+                  Hubungi Kami
+                </button>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section id="kontak" className="py-32 px-4 sm:px-6 lg:px-8" style={{ background: '#242E49' }}>
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="font-semibold text-sm uppercase tracking-widest mb-3" style={{ color: '#B4182D' }}>Kami siap membantu</p>
+            <h2 className="font-heading font-bold text-4xl md:text-5xl" style={{ color: '#FDA481' }}>Hubungi Kami</h2>
+          </div>
+          <div className="grid lg:grid-cols-2 gap-12">
+            <div className="space-y-5">
+              {([
+                { Icon: Mail,   label: "Email",   value: "info@taratech.web.id" },
+                { Icon: Phone,  label: "Telepon", value: "+62 895-3268-80773" },
+                { Icon: MapPin, label: "Alamat",  value: "Bogor, Indonesia" },
+              ] as const).map(({ Icon, label, value }) => (
+                <div key={label} className="rounded-3xl p-6 flex items-center gap-5 hover:-translate-y-1 transition-all duration-300 border" style={{ background: '#181A2F', borderColor: '#37415C' }}>
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0" style={{ background: '#B4182D22' }}>
+                    <Icon className="h-6 w-6" style={{ color: '#B4182D' }} />
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ color: '#FDA48199' }}>{label}</p>
+                    <p className="font-semibold" style={{ color: '#FDA481' }}>{value}</p>
+                  </div>
                 </div>
-                <div>
-                  <input
-                    type="email"
-                    placeholder="EMAIL ANDA"
-                    className="w-full h-14 px-4 font-bold text-lg border-4 border-black focus:bg-neo-secondary focus:shadow-neo-sm focus:outline-none transition-all duration-100 placeholder:text-black/40 placeholder:font-bold"
-                  />
-                </div>
-                <div>
-                  <textarea
-                    placeholder="PESAN ANDA"
-                    rows={5}
-                    className="w-full px-4 py-4 font-bold text-lg border-4 border-black focus:bg-neo-secondary focus:shadow-neo-sm focus:outline-none transition-all duration-100 placeholder:text-black/40 placeholder:font-bold resize-none"
-                  />
-                </div>
-                <Button variant="primary" className="w-full text-lg h-16">
-                  KIRIM PESAN
-                </Button>
+              ))}
+            </div>
+            <div className="rounded-[2rem] p-8 border" style={{ background: '#181A2F', borderColor: '#37415C' }}>
+              <form className="space-y-5">
+                <input type="text" placeholder="Nama Anda"
+                  className="w-full h-12 px-5 rounded-full font-semibold text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 transition-all duration-300"
+                  style={{ background: '#242E49', border: '1px solid #37415C', color: '#FDA481' }} />
+                <input type="email" placeholder="Email Anda"
+                  className="w-full h-12 px-5 rounded-full font-semibold text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 transition-all duration-300"
+                  style={{ background: '#242E49', border: '1px solid #37415C', color: '#FDA481' }} />
+                <textarea placeholder="Pesan Anda" rows={4}
+                  className="w-full px-5 py-4 rounded-3xl font-semibold text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 transition-all duration-300 resize-none"
+                  style={{ background: '#242E49', border: '1px solid #37415C', color: '#FDA481' }} />
+                <Button className="w-full">Kirim Pesan</Button>
               </form>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-black border-t-8 border-black py-12">
-        <div className="container mx-auto px-4 text-center max-w-7xl">
-          <div className="inline-block border-4 border-white bg-neo-accent px-6 py-3 shadow-[8px_8px_0px_0px_#fff] mb-6 rotate-2">
-            <span className="text-3xl font-black uppercase">TARA TECH</span>
+      {/* FOOTER */}
+      <footer className="py-10 px-4" style={{ background: '#54162B' }}>
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex items-center gap-3">
+            <span className="font-heading font-bold text-lg" style={{ color: '#FDA481' }}>Tara Tech</span>
           </div>
-          <p className="font-bold text-white text-lg">
-            &copy; 2026 Tara Tech. All rights reserved.
-          </p>
+          <p className="text-sm" style={{ color: '#FDA48199' }}>&copy; {new Date().getFullYear()} Tara Tech. All rights reserved.</p>
         </div>
       </footer>
-    </div>
-  );
+    </main>
+  )
 }

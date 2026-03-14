@@ -1,31 +1,31 @@
 import type { Config } from "tailwindcss"
 
 const config: Config = {
-  darkMode: ["class"],
   content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
   ],
   theme: {
     extend: {
       colors: {
-        'neo-bg': '#FFFDF5',
-        'neo-accent': '#FF6B6B',
-        'neo-secondary': '#FFD93D',
-        'neo-muted': '#C4B5FD',
+        bg:           "#181A2F",
+        fg:           "#FDA481",
+        primary:      "#B4182D",
+        "primary-fg": "#FDA481",
+        secondary:    "#FDA481",
+        accent:       "#37415C",
+        muted:        "#242E49",
+        "muted-fg":   "#FDA481",
+        border:       "#37415C",
       },
       fontFamily: {
-        sans: ['Space Grotesk', 'sans-serif'],
+        heading: ["'Fraunces'", "serif"],
+        sans:    ["'Nunito'", "sans-serif"],
       },
       boxShadow: {
-        'neo-sm': '4px 4px 0px 0px #000',
-        'neo': '8px 8px 0px 0px #000',
-        'neo-lg': '12px 12px 0px 0px #000',
-        'neo-xl': '16px 16px 0px 0px #000',
-      },
-      animation: {
-        'spin-slow': 'spin 10s linear infinite',
+        soft:  "0 4px 20px -2px rgba(180,24,45,0.2)",
+        float: "0 10px 40px -10px rgba(253,164,129,0.25)",
+        lift:  "0 20px 40px -10px rgba(180,24,45,0.3)",
       },
     },
   },

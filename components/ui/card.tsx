@@ -1,54 +1,48 @@
 import * as React from "react"
 import { cn } from "@/lib/utils"
 
-const Card = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn(
-      "border-4 border-black bg-white shadow-neo",
-      className
-    )}
-    {...props}
-  />
-))
-Card.displayName = "Card"
+// Asymmetric radius patterns — cycles through 6 variants for organic feel
+const radiusVariants = [
+  "rounded-tl-[4rem] rounded-tr-[2rem] rounded-br-[4rem] rounded-bl-[2rem]",
+  "rounded-tl-[2rem] rounded-tr-[4rem] rounded-br-[2rem] rounded-bl-[4rem]",
+  "rounded-tl-[3rem] rounded-tr-[2rem] rounded-br-[2rem] rounded-bl-[3rem]",
+  "rounded-tl-[2rem] rounded-tr-[3rem] rounded-br-[3rem] rounded-bl-[2rem]",
+  "rounded-tl-[4rem] rounded-tr-[2rem] rounded-br-[2rem] rounded-bl-[2rem]",
+  "rounded-[2rem]",
+]
 
-const CardHeader = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn("flex flex-col space-y-3 p-6", className)}
-    {...props}
-  />
-))
-CardHeader.displayName = "CardHeader"
+interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
+  variant?: 0 | 1 | 2 | 3 | 4 | 5
+}
 
-const CardTitle = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLHeadingElement>
->(({ className, ...props }, ref) => (
-  <h3
-    ref={ref}
-    className={cn(
-      "text-2xl font-black leading-tight tracking-tight",
-      className
-    )}
-    {...props}
-  />
-))
-CardTitle.displayName = "CardTitle"
+export function Card({ className, variant = 5, ...props }: CardProps) {
+  return (
+    <div
+      className={cn(
+        "border shadow-soft",
+        "hover:-translate-y-1 hover:shadow-lift transition-all duration-300",
+        radiusVariants[variant],
+        className
+      )}
+      style={{ background: '#181A2F', borderColor: '#37415C' }}
+      {...props}
+    />
+  )
+}
 
-const CardContent = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
-))
-CardContent.displayName = "CardContent"
+export function CardHeader({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
+  return <div className={cn("p-8 pb-4", className)} {...props} />
+}
 
-export { Card, CardHeader, CardTitle, CardContent }
+export function CardTitle({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
+  return (
+    <h3
+      className={cn("font-heading text-xl font-bold text-fg leading-snug", className)}
+      {...props}
+    />
+  )
+}
+
+export function CardContent({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
+  return <div className={cn("px-8 pb-8", className)} {...props} />
+}
