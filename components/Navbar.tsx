@@ -7,10 +7,12 @@ import { Button } from "@/components/ui/button"
 const WA_LINK = "https://wa.me/628953268807733?text=Halo%20saya%20tertarik%20menggunakan%20jasa%20pembuatan%20website%20Tara%20Tech"
 
 const links = [
-  { href: "#layanan",    label: "Layanan" },
-  { href: "#keunggulan", label: "Keunggulan" },
-  { href: "#pricing",    label: "Pricing" },
-  { href: "#kontak",     label: "Kontak" },
+  { href: "/#layanan",    label: "Layanan" },
+  { href: "/#keunggulan", label: "Keunggulan" },
+  { href: "/#pricing",    label: "Pricing" },
+  { href: "/#kontak",     label: "Kontak" },
+  { href: "/wa-generator", label: "WA Generator" },
+  { href: "/qr-generator", label: "QR Generator" },
 ]
 
 export default function Navbar() {
