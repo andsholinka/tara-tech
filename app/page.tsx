@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar"
 import Blob from "@/components/Blob"
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
+import PortfolioMockup from "@/components/PortfolioMockup"
 
 const WA = "https://wa.me/62895326880773?text=Halo%20saya%20tertarik%20menggunakan%20jasa%20pembuatan%20website%20Tara%20Tech"
 
@@ -134,7 +135,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PRICING */}
+      {/* PRICING — temporarily hidden
       <section id="pricing" className="py-32 px-4 sm:px-6 lg:px-8" style={{ background: '#181A2F' }}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -145,7 +146,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8 items-start">
 
-            {/* STARTER */}
+            {/* STARTER * /}
             <div className="rounded-3xl p-8 border transition-all duration-300 hover:-translate-y-1" style={{ background: '#242E49', borderColor: '#37415C' }}>
               <p className="font-semibold text-sm uppercase tracking-widest mb-4" style={{ color: '#FDA48199' }}>Starter</p>
               <div className="flex items-end gap-1 mb-2">
@@ -175,7 +176,7 @@ export default function Home() {
               </a>
             </div>
 
-            {/* PROFESSIONAL — highlighted */}
+            {/* PROFESSIONAL — highlighted * /}
             <div className="rounded-3xl p-8 border transition-all duration-300 hover:-translate-y-2 relative" style={{ background: '#B4182D', borderColor: '#B4182D' }}>
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest" style={{ background: '#FDA481', color: '#54162B' }}>
                 Paling Populer
@@ -209,7 +210,7 @@ export default function Home() {
               </a>
             </div>
 
-            {/* ENTERPRISE */}
+            {/* ENTERPRISE * /}
             <div className="rounded-3xl p-8 border transition-all duration-300 hover:-translate-y-1" style={{ background: '#242E49', borderColor: '#37415C' }}>
               <p className="font-semibold text-sm uppercase tracking-widest mb-4" style={{ color: '#FDA48199' }}>Enterprise</p>
               <div className="flex items-end gap-1 mb-2">
@@ -222,8 +223,6 @@ export default function Home() {
                   "Desain premium UI/UX",
                   "Domain & hosting premium",
                   "Integrasi payment gateway",
-                  // "Dashboard admin",
-                  // "SEO lanjutan",
                   "Revisi unlimited",
                   "Support 3 bulan",
                 ].map(f => (
@@ -241,6 +240,50 @@ export default function Home() {
             </div>
 
           </div>
+        </div>
+      </section>
+      */}
+
+      {/* PORTFOLIO */}
+      <section id="portfolio" className="py-32 px-4 sm:px-6 lg:px-8" style={{ background: '#181A2F' }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="font-semibold text-sm uppercase tracking-widest mb-3" style={{ color: '#B4182D' }}>Karya nyata kami</p>
+            <h2 className="font-heading font-bold text-4xl md:text-5xl" style={{ color: '#FDA481' }}>Yang Sudah Bekerja Sama</h2>
+            <p className="text-lg max-w-xl mx-auto mt-4" style={{ color: '#FDA48199' }}>Website profesional yang telah kami bangun untuk klien kami</p>
+          </div>
+
+          {/* Project Card */}
+          <div className="rounded-3xl overflow-hidden border" style={{ background: '#242E49', borderColor: '#37415C' }}>
+            <div className="grid lg:grid-cols-2 gap-0">
+
+              {/* Left — info */}
+              <div className="p-10 flex flex-col justify-center">
+                <div className="inline-flex items-center gap-2 rounded-full px-3 py-1 mb-6 w-fit text-xs font-bold uppercase tracking-widest" style={{ background: '#B4182D22', color: '#B4182D' }}>
+                  ✅ Live
+                </div>
+                <h3 className="font-heading font-bold text-3xl mb-3" style={{ color: '#FDA481' }}>Dapur Ardya</h3>
+                <p className="text-base leading-relaxed mb-6" style={{ color: '#FDA48199' }}>
+                  Website resep masakan modern untuk Dapur Ardya — tampil elegan, responsif di semua perangkat, dan mudah dinavigasi. Menyajikan inspirasi masakan dengan pengalaman membaca yang nyaman.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-8">
+                  {["Next.js", "Responsive", "SEO Ready", "Fast Load"].map(tag => (
+                    <span key={tag} className="px-3 py-1 rounded-full text-xs font-semibold border" style={{ borderColor: '#37415C', color: '#FDA48199' }}>{tag}</span>
+                  ))}
+                </div>
+                <a href="https://dapurardya.my.id/" target="_blank" rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 font-bold text-sm transition-all hover:gap-3"
+                  style={{ color: '#FDA481' }}>
+                  Kunjungi Website <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
+
+              {/* Right — mockups */}
+              <PortfolioMockup />
+
+            </div>
+          </div>
+
         </div>
       </section>
 

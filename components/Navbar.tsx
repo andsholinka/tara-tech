@@ -9,10 +9,11 @@ const WA_LINK = "https://wa.me/628953268807733?text=Halo%20saya%20tertarik%20men
 const links = [
   { href: "/#layanan",    label: "Layanan" },
   { href: "/#keunggulan", label: "Keunggulan" },
-  { href: "/#pricing",    label: "Pricing" },
+  { href: "/#portfolio",  label: "Portfolio" },
   { href: "/#kontak",     label: "Kontak" },
   { href: "/wa-generator", label: "WA Generator" },
   { href: "/qr-generator", label: "QR Generator" },
+  { href: "/spin-thr",     label: "🎁 Spin THR" },
 ]
 
 export default function Navbar() {
