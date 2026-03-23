@@ -13,7 +13,6 @@ const links = [
   { href: "/#kontak",     label: "Kontak" },
   { href: "/wa-generator", label: "WA Generator" },
   { href: "/qr-generator", label: "QR Generator" },
-  { href: "/spin-thr",     label: "🎁 Spin THR" },
 ]
 
 export default function Navbar() {
